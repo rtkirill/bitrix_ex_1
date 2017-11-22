@@ -81,7 +81,7 @@
 					
 				</div>
 				<div class="ft_contacts">
-					<h4>Контактная информация</h4>
+					<h4><?=GetMessage("CONTACTS")?></h4>
 					<!-- vCard        http://help.yandex.ru/webmaster/hcard.pdf      -->
 					<p class="vcard">
 						<span class="adr">

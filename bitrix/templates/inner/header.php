@@ -8,12 +8,10 @@ IncludeTemplateLangFile(__FILE__);
 	<?$APPLICATION->ShowHead();?>
 	<title><?$APPLICATION->ShowTitle()?></title>
 	<link rel="shortcut icon" type="image/x-icon" href="/bitrix/templates/.default/favicon.ico">
-	<link rel="stylesheet" href="/bitrix/templates/.default/template_style.css">
-	
-	<script type="text/javascript" src="/bitrix/templates/.default/js/jquery-1.8.2.min.js"></script>
-	<script type="text/javascript" src="/bitrix/templates/.default/js/slides.min.jquery.js"></script>
-	<script type="text/javascript" src="/bitrix/templates/.default/js/jquery.carouFredSel-6.1.0-packed.js"></script>
-	<script type="text/javascript" src="/bitrix/templates/.default/js/functions.js"></script>
+	<?
+	$APPLICATION->AddHeadScript('/bitrix/templates/.default/js/functions.js');
+	$APPLICATION->SetAdditionalCSS("/bitrix/templates/.default/template_style.css");
+	?>
 	
 	<!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]-->
 </head>
@@ -25,7 +23,7 @@ IncludeTemplateLangFile(__FILE__);
 				<table>
 					<tr>
 						<td rowspan="2" class="hd_companyname">
-							<h1><a href="">Мебельный магазин</a></h1>
+							<h1><a href=""><?=GetMessage("COMPANY_NAME")?></a></h1>
 						</td>
 						<td rowspan="2" class="hd_txarea">
 							<span class="tel">8 (495) 212-85-06</span>	<br/>	
@@ -98,7 +96,6 @@ IncludeTemplateLangFile(__FILE__);
 			</div>
 		</div>
 		
-		<!--- // end header area --->
 		<div class="bc_breadcrumbs">
 			<ul>
 				<li><a href="">Каталог</a></li>
@@ -112,6 +109,5 @@ IncludeTemplateLangFile(__FILE__);
 				<div class="mn_content">
 					<div class="main_post">
 						<div class="main_title">
-							<p class="title">Заголовок страницы</p>
+							<p class="title"><?$APPLICATION->ShowTitle(false)?></p>
 						</div>
-						<!-- workarea -->
