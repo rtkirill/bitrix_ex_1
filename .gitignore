@@ -1,0 +1,7 @@
+# Ignore bitrix system files
+/login
+/bitrix/*
+
+#Except
+!/bitrix/php_interface/
+!/bitrix/templates/
